@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mindset Resurgence</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0e0e0e;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: #111;
+            color: #00ff00;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #222;
+            padding: 10px 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #00ff00;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            color: #ff0000;
+        }
+
+        /* Main Content Area */
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .social-icons a {
+            margin: 0 10px;
+            color: #00ff00;
+            font-size: 2rem;
+            text-decoration: none;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #ff0000;
+            transform: scale(1.1);
+        }
+
+        /* Section Styles */
+        .section-container {
+            margin-top: 40px;
+            padding: 30px;
+            background-color: #222;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            margin-bottom: 40px;
+        }
+
+        .section-container h2 {
+            font-size: 2.5rem;
+            color: #00ff00;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .section-container p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        /* Featured Videos Section */
+        #videos .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .video-card {
+            background-color: #333;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .video-card img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .video-card img:hover {
+            transform: scale(1.1);
+        }
+
+        .video-card h3 {
+            font-size: 1.4rem;
+            padding: 15px;
+            background-color: #111;
+            color: #00ff00;
+            margin: 0;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: #111;
+            color: #00ff00;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        /* Blog Styles */
+        .blog {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .blog h2 {
+            font-size: 2.5rem;
+            color: #00ff00;
+            font-weight: bold;
+        }
+
+        .blog article {
+            margin-top: 15px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .blog a {
+            color: #00ff00;
+            text-decoration: none;
+        }
+
+        .blog a:hover {
+            text-decoration: underline;
+        }
+
+        /* Daily Quote Box */
+        .quote-box {
+            background-color: #333;
+            border: 2px solid #00ff00;
+            padding: 20px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/0e/School_blackboard.jpg');
+            background-size: cover;
+            color: #fff;
+            font-family: 'Courier New', Courier, monospace;
+            height: 150px; /* Fixed height for scrolling effect */
+            overflow: hidden;
+        }
+
+        .quote-container {
+            font-size: 1.5rem;
+            font-style: italic;
+            display: none;
+        }
+
+        .quote-container.active {
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="matrix-background"></div>
+
+    <header>
+        <h1>Mindset Resurgence</h1>
+        <p>Your go-to place for motivation and personal development</p>
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#videos">Videos</a>
+        <a href="#blog">Blog</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="social-icons">
+        <a href="https://www.youtube.com/@mindsetresurgence" target="_blank" title="YouTube">
+            <i class="fab fa-youtube">YouTube</i>
+        </a>
+        <a href="https://x.com/mindsetresurgen" target="_blank" title="Twitter">
+            <i class="fab fa-twitter">Twitter</i>
+        </a>
+        <a href="https://www.instagram.com/mindsetresurgence/" target="_blank" title="Instagram">
+            <i class="fab fa-instagram">Instagram</i>
+        </a>
+        <a href="https://www.facebook.com/mindsetresurgence" target="_blank" title="Facebook">
+            <i class="fab fa-facebook">Facebook</i>
+        </a>
+    </div>
+
+    <div class="content">
+
+        <!-- Daily Quotation Box with One Quote After Another -->
+        <div class="quote-box">
+		<div class="section-containe">
+                <p><h2>Today's Quote:</h2></p>
+            </div>
+            <div class="quote-container active">
+                <p>"The only way to do great work is to love what you do." - Steve Jobs</p>
+            </div>
+            <div class="quote-container">
+                <p>"Success is not final, failure is not fatal: It is the courage to continue that counts." - Winston Churchill</p>
+            </div>
+            <div class="quote-container">
+                <p>"Don’t watch the clock; do what it does. Keep going." - Sam Levenson</p>
+            </div>
+        </div>
+
+        <!-- About Section -->
+        <section id="about" class="section-container">
+            <h2>About Us</h2>
+            <p>Welcome to Mindset Resurgence! We help you unleash your potential through inspiring videos and content on personal development, motivation, and growth.</p>
+        </section>
+
+        <!-- Featured Videos Section -->
+        <section id="videos" class="section-container">
+            <h2>Featured Videos</h2>
+            <div class="video-grid">
+
+                <!-- Video Card 1 -->
+                <div class="video-card">
+                    <a href="https://www.youtube.com/watch?v=S5QfuDzV6O0" target="_blank">
+                        <img src="https://img.youtube.com/vi/S5QfuDzV6O0/0.jpg" alt="Daily Habits for Success">
+                        <h3>Daily Habits for Success: Transform Your Routine and Achieve Your Goals</h3>
+                    </a>
+                </div>
+
+                <!-- Video Card 2 -->
+                <div class="video-card">
+                    <a href="https://www.youtube.com/watch?v=H1nk9Jt-8uw" target="_blank">
+                        <img src="https://img.youtube.com/vi/H1nk9Jt-8uw/0.jpg" alt="A Girl’s Journey Through Every Stage of Life">
+                        <h3>A Girl’s Journey Through Every Stage of Life</h3>
+                    </a>
+                </div>
+
+                <!-- Video Card 3 -->
+                <div class="video-card">
+                    <a href="https://www.youtube.com/watch?v=qVj6NSBRGO0" target="_blank">
+                        <img src="https://img.youtube.com/vi/qVj6NSBRGO0/0.jpg" alt="Unlock Your Potential Every Morning in Just 5 Minutes">
+                        <h3>Unlock Your Potential Every Morning in Just 5 Minutes</h3>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section id="blog" class="section-container">
+            <h2>Latest Blog</h2>
+            <article>
+                <h3><a href="#">5 Steps to Cultivate a Growth Mindset</a></h3>
+                <p>Discover the transformative power of a growth mindset and learn how to incorporate these steps into your daily life.</p>
+            </article>
+
+            <article>
+                <h3><a href="#">Overcoming Procrastination</a></h3>
+                <p>Learn strategies to conquer procrastination and take charge of your time effectively.</p>
+            </article>
+
+            <article>
+                <h3><a href="#">Building Daily Habits for Success</a></h3>
+                <p>Get inspired to build habits that will lead you to success in every area of your life.</p>
+            </article>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section-container">
+            <h2>Contact Us</h2>
+            <p>Email us at <a href="mailto:mindsetresurgence@gmail.com">mindsetresurgence@gmail.com</a></p>
+        </section>
+        
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Mindset Resurgence. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Font Awesome for social icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <!-- Script to switch quotes -->
+    <script>
+        let quotes = document.querySelectorAll('.quote-container');
+        let currentIndex = 0;
+
+        function showNextQuote() {
+            quotes[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % quotes.length;
+            quotes[currentIndex].classList.add('active');
+        }
+
+        setInterval(showNextQuote, 5000); // Change quote every 5 seconds
+    </script>
+</body>
+</html>
+
+
